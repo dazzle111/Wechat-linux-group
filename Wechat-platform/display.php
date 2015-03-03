@@ -14,7 +14,7 @@ $ACC_TOKEN=$result['access_token'];
 echo $ACC_TOKEN;
 */
 header("Content-type: text/html; charset=utf-8");
-define("ACCESS_TOKEN", '2OU9nu77MTunIxqxNISCPB6906nJkd7HjFa21ROl4SkmrRplb3m1_YrxKyYhCYzDv6lqiWbsZfXFEg7gdXdBpw');
+define("ACCESS_TOKEN", '');
 
 //创建菜单
 function createMenu($data){
