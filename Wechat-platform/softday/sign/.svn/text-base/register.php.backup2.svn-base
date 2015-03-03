@@ -1,0 +1,34 @@
+<?php
+	require_once("conn.php");
+	require_once("check.php");
+
+	$num = $_POST["num"];
+	$passwd = $_POST["passwd"];
+	$name = $_POST["name"];
+	$tel = $_POST["tel"];
+
+	$check = new Check($num, $passwd);
+	$result = $check->getResult();
+	if (!$result)
+	{
+		$db = new Conn();
+		$sql = "insert into register(num,name,tel) values('$num','$name','$tel') on DUPLICATE key update name=values(name),tel=values(tel)";
+		$res = $db->handle($sql);
+	
+		if (!$res)
+			return "数据插入错误";
+		$res = $db->handle("select * from register where num=$num;");
+		if (!$res)
+			return "数据查询错误";
+		if (is_object($res))
+			$info = $res->fetch_assoc();
+		$result =  "序号：".$info["id"]."</br>". "名字：".$info["name"]."</br>"."手机号".$info["tel"]."</br>";
+		echo $result;
+	}else{
+		//echo '<script>alert('.$result.');</script>';
+		$result = iconv('GBK','UTF-8', $result);
+		echo $result;
+	}
+?>
+
+
