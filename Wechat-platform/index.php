@@ -123,7 +123,7 @@ class wechatCallbackapiTest
         }
         else if ($keyword == "donate")
         {
-            $contentStr = "感谢您对小组的关注!"."\n"."银行：中国银行"."\n"."收款人：王亚刚 "."\n"."卡号:6217 8536 0001 2221 486"."\n"."支付宝:foundation@xiyoulinux.org";
+            $contentStr = "感谢您对小组的关注!"."\n"."银行：中国银行"."\n"."收款人：韩美美 "."\n"."卡号:0000 0000 0000 0000 000"."\n"."支付宝:foundation@xiyoulinux.org";
         }
         /*   else if(strstr($keyword, "纳新"))
         {
