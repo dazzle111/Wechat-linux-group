@@ -12,9 +12,9 @@
 	function __construct()
 	{
 		$hostname = "localhost";
-		$dbuser = "cs_team";
-		$dbpwd = "db_cs_team";
-		$dbname = "cs_linux";
+		$dbuser = "";
+		$dbpwd = "";
+		$dbname = "";
 		$charName = "utf8";
 
 		$this->db = new mysqli($hostname, $dbuser, $dbpwd, $dbname);
